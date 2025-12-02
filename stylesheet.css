@@ -1,21 +1,21 @@
-/* GLOBAL RESET */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Smooth Scroll */
 html {
     scroll-behavior: smooth;
 }
 
-/* Background */
+/* BACKGROUND */
 body {
     font-family: 'Inter', sans-serif;
     background: url("images/bliss_background.jpg") no-repeat center center fixed;
     background-size: cover;
-    padding-top: 70px; /* space for navbar */
+    padding-top: 70px;
+    transition: 0.3s ease-in-out;
 }
 
 /* NAVBAR */
@@ -39,7 +39,6 @@ body {
     font-size: 17px;
     text-decoration: none;
     color: #003e7f;
-    transition: 0.2s;
 }
 
 .nav-content a:hover {
@@ -82,7 +81,8 @@ h2 {
 }
 
 .icon-header {
-    width: 22px;
+    width: 24px;
+    height: 24px;
     margin-right: 10px;
 }
 
@@ -95,7 +95,6 @@ h2 {
     text-decoration: none;
     font-weight: 600;
     color: #004b8b;
-    transition: 0.25s;
 }
 
 .nav-links a:hover {
@@ -103,7 +102,7 @@ h2 {
     transform: translateY(-2px);
 }
 
-/* DIVIDERS */
+/* DIVIDER */
 hr {
     border: none;
     border-top: 1px solid #ddd;
@@ -121,7 +120,7 @@ hr {
     color: #000;
     font-weight: 600;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    transition: 0.25s ease;
+    transition: 0.25s;
 }
 
 .project-item:hover {
@@ -129,7 +128,6 @@ hr {
     background: rgba(255,255,255,0.9);
 }
 
-/* ICONS */
 .icon {
     width: 22px;
     vertical-align: middle;
@@ -150,4 +148,49 @@ footer {
     margin-top: 30px;
     text-shadow: 0 1px 4px rgba(0,0,0,0.8);
     padding-bottom: 40px;
+}
+
+/* ---------------------- */
+/*      DARK MODE         */
+/* ---------------------- */
+
+.dark-mode body {
+    background: #111 !important;
+    background-image: none !important;
+}
+
+.dark-mode .container {
+    background: rgba(20,20,20,0.85);
+    color: #fff;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode p,
+.dark-mode li {
+    color: #fff;
+}
+
+.dark-mode .nav-links a {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+.dark-mode .project-item {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+}
+
+.dark-mode footer {
+    color: #ccc;
+}
+
+/* TOGGLE BUTTON */
+#theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    cursor: pointer;
+    z-index: 1000;
 }
