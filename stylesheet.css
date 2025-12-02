@@ -1,0 +1,142 @@
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fade-in animation */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: url("images/bliss_background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Main White Card with Glassmorphism & Animation */
+.container {
+    width: 70%;
+    max-width: 900px;
+    margin: 60px auto;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 40px;
+    border-radius: 22px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.container:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 55px rgba(0, 0, 0, 0.45);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: slideFade 0.7s ease both;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Navigation Buttons */
+.nav-links {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    padding: 6px 12px;
+    display: inline-block;
+    background: rgba(255,255,255,0.4);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #0a4d8c;
+    font-size: 17px;
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-2px);
+}
+
+/* Divider */
+hr {
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+/* Icons */
+.icon,
+.icon-small,
+.icon-header {
+    transition: 0.15s ease-in-out;
+}
+
+.icon:hover,
+.icon-small:hover,
+.icon-header:hover {
+    transform: scale(1.15) rotate(3deg);
+}
+
+.icon {
+    width: 22px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.icon-small {
+    width: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icon-header {
+    width: 20px;
+    margin-right: 8px;
+}
+
+/* Project Boxes */
+.project-item {
+    display: block;
+    background: #e5e5e5;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 12px
