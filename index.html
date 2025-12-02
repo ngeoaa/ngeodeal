@@ -4,57 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nathan George — Portfolio</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body id="top">
 
+    <!-- DARK MODE TOGGLE -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="darkToggle">
+        <label for="darkToggle" class="toggle-label">
+            <span class="toggle-ball"></span>
+        </label>
+    </div>
+
     <!-- NAVBAR -->
-    <nav class="navbar">
+    <nav>
         <a href="#top">Home</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#interests">Interests</a>
     </nav>
 
-    <!-- MAIN CARD -->
+    <!-- MAIN CONTAINER -->
     <div class="container">
-        <h1>Nathan George</h1>
 
+        <h1>Nathan George</h1>
         <p class="subtitle">
-            I am a Financial & Business Economics student at York University. 
-            This website showcases my academic work, skills, and interests.
+            I am a Financial & Business Economics student at York University. This website showcases my academic work, skills, and interests.
         </p>
 
         <div class="nav-links">
-            <a href="mailto:ng@example.com" class="button">Email</a>
-            <a href="resume.pdf" target="_blank" class="button">Resume</a>
-            <a href="https://www.linkedin.com" target="_blank" class="button">LinkedIn</a>
+            <a href="mailto:nathangeorge@yorku.ca">Email</a>
+            <a href="resume.pdf" target="_blank">Resume</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
         </div>
 
         <hr>
 
         <!-- PROJECTS -->
-        <h2 id="projects"><img src="images/icon3.png" class="icon-header"> Projects</h2>
+        <h2 id="projects"><img src="images/icon3.png" class="icon-header">Projects</h2>
 
         <a class="project-item" href="econ3210.pdf" target="_blank">
-            <img src="images/icon4.png" class="icon"> 
+            <img src="images/icon4.png" class="icon-small">
             ECON 3210 — Regression Analysis (R Assignment)
         </a>
 
         <a class="project-item" href="fxtrading.pdf" target="_blank">
-            <img src="images/icon4.png" class="icon"> 
+            <img src="images/icon4.png" class="icon-small">
             International Financial Analysis — Coursework Project
         </a>
 
         <hr>
 
         <!-- SKILLS -->
-        <h2 id="skills"><img src="images/icon3.png" class="icon-header"> Skills</h2>
-
+        <h2 id="skills"><img src="images/icon3.png" class="icon-header">Skills</h2>
         <ul>
             <li>Data Analysis (Excel, R)</li>
             <li>Financial Modeling</li>
@@ -65,8 +68,7 @@
         <hr>
 
         <!-- INTERESTS -->
-        <h2 id="interests"><img src="images/icon5.png" class="icon-header"> Interests</h2>
-
+        <h2 id="interests"><img src="images/icon5.png" class="icon-header">Interests</h2>
         <ul>
             <li>⚽ Football</li>
             <li>🎵 Listening to Music</li>
@@ -74,11 +76,32 @@
             <li>✈️ Travelling</li>
         </ul>
 
+        <footer>
+            © 2025 Nathan George — Portfolio Project for ITEC 1010
+        </footer>
+
     </div>
 
-    <footer>
-        © 2025 Nathan George — Portfolio Project for ITEC 1010
-    </footer>
+    <!-- DARK MODE SCRIPT -->
+    <script>
+        const toggle = document.getElementById("darkToggle");
+        const body = document.body;
+
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark");
+            toggle.checked = true;
+        }
+
+        toggle.addEventListener("change", () => {
+            if (toggle.checked) {
+                body.classList.add("dark");
+                localStorage.setItem("theme", "dark");
+            } else {
+                body.classList.remove("dark");
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
 
 </body>
 </html>
