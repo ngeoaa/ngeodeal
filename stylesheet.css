@@ -1,151 +1,195 @@
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
+/* Smooth Scroll */
+html { scroll-behavior: smooth; }
 
 /* Background */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
     background: url("images/bliss_background.jpg") no-repeat center center fixed;
     background-size: cover;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Fade-in */
+body {
+    animation: fadeIn 0.6s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* NAVBAR */
-.navbar {
-    width: 100%;
-    padding: 14px 0;
-    background: rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 99;
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 15px 0;
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(12px);
+    font-size: 20px;
+    font-weight: 700;
 }
 
-.navbar a {
-    margin: 0 25px;
-    color: #0a3e7b;
-    font-weight: 600;
+nav a {
     text-decoration: none;
-    font-size: 17px;
+    color: #003366;
+    transition: 0.25s;
 }
 
-.navbar a:hover {
-    text-decoration: underline;
+nav a:hover {
+    transform: scale(1.08);
+    color: #001a33;
 }
 
-/* MAIN CONTAINER — FIXED TO MATCH LOCAL EXACTLY */
+/* Main White Card */
 .container {
-    width: 74%;                 /* Tighter width like your local screenshot */
-    max-width: 880px;           /* Perfect match for Safari local */
-    margin: 65px auto;          /* Matches your local spacing */
-    background: rgba(255, 255, 255, 0.78);
+    width: 70%;
+    max-width: 900px;
+    margin: 40px auto 120px;
+    background: rgba(255,255,255,0.75);
     backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    padding: 42px 48px;         /* Matches local padding */
-    border-radius: 26px;        /* Perfect roundness based on screenshot */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    padding: 40px;
+    border-radius: 22px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.25);
 }
 
 /* Headings */
 h1 {
     text-align: center;
     font-size: 40px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .subtitle {
     text-align: center;
-    font-size: 16px;
-    margin: 0 auto 26px;
-    max-width: 720px;
-    line-height: 1.5;
+    font-size: 17px;
+    margin-bottom: 25px;
 }
 
-h2 {
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 32px;
-    margin-bottom: 15px;
-}
-
-/* BUTTONS */
+/* Buttons */
 .nav-links {
     text-align: center;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
 }
 
-.button {
-    padding: 8px 18px;
-    background: #e8f0ff;
-    border-radius: 10px;
-    font-weight: 600;
-    color: #003e88;
-    text-decoration: none;
+.nav-links a {
     margin: 0 10px;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #0a4d8c;
+    font-weight: 600;
     transition: 0.2s;
-}
-
-.button:hover {
-    background: white;
-    transform: translateY(-2px);
 }
 
 /* Divider */
 hr {
+    margin: 25px 0;
     border: none;
-    border-top: 1px solid #cfcfcf;
-    margin: 24px 0;
+    border-top: 1px solid #bbb;
 }
 
-/* ICONS */
-.icon {
-    width: 20px;
-    margin-right: 8px;
-    vertical-align: middle;
-}
+/* Icons */
+.icon-header { width: 22px; margin-right: 6px; vertical-align: middle; }
+.icon-small { width: 20px; margin-right: 8px; vertical-align: middle; }
 
-.icon-header {
-    width: 22px;
-}
-
-/* PROJECT CARDS — RESPONSIVE FIX */
+/* Project Items */
 .project-item {
     display: block;
-    background: #ededed;
-    padding: 15px 22px;
-    border-radius: 12px;
+    background: #e8e8e8;
+    padding: 14px;
+    border-radius: 10px;
     margin-bottom: 12px;
-    color: black;
     text-decoration: none;
+    color: black;
     font-weight: 600;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-    transition: 0.2s;
-    max-width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: 0.2s ease;
 }
-
 .project-item:hover {
-    background: #f3f3f3;
+    background: #dcdcdc;
     transform: translateX(4px);
-}
-
-/* Lists */
-ul {
-    font-size: 15.5px;
-    line-height: 1.65;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 25px;
-    font-size: 15px;
-    color: white;
-    text-shadow: 0 2px 5px black;
     margin-top: 40px;
+    font-size: 16px;
+    color: #222;
+}
+
+/* ======================
+      DARK MODE
+====================== */
+body.dark {
+    background: #111 !important;
+    color: white !important;
+}
+
+body.dark nav {
+    background: rgba(0,0,0,0.5);
+}
+
+body.dark nav a {
+    color: #d7e7ff;
+}
+
+body.dark .container {
+    background: rgba(20,20,20,0.75);
+    color: white;
+}
+
+body.dark .project-item {
+    background: #222;
+    color: white;
+}
+
+body.dark footer {
+    color: #ccc;
+}
+
+/* ======================
+    DARK MODE SWITCH
+====================== */
+.theme-toggle {
+    position: fixed;
+    top: 18px;
+    right: 30px;
+    z-index: 9999;
+}
+
+.theme-toggle input { display: none; }
+
+.toggle-label {
+    width: 52px;
+    height: 28px;
+    background: #d1e4ff;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.toggle-ball {
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: 0.3s ease;
+}
+
+#darkToggle:checked + .toggle-label {
+    background: #2e3b55;
+}
+
+#darkToggle:checked + .toggle-label .toggle-ball {
+    transform: translateX(24px);
 }
