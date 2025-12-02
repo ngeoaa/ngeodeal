@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nathan George — Portfolio</title>
 
-    <!-- FORCE CSS TO UPDATE (fixes GitHub caching) -->
+    <!-- Force GitHub Pages to reload CSS -->
     <link rel="stylesheet" href="stylesheet.css?v=9999">
 </head>
 
@@ -27,14 +27,19 @@
         <a href="#interests">Interests</a>
     </nav>
 
-    <!-- MAIN CONTAINER -->
+    <!-- MAIN CONTENT -->
     <div class="container">
 
         <h1>Nathan George</h1>
         <p class="subtitle">
-            I am a Financial & Business Economics student at York University. 
+            I am a Financial & Business Economics student at York University.
             This website showcases my academic work, skills, and interests.
         </p>
+
+        <!-- SEARCH BAR -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search...">
+        </div>
 
         <div class="nav-links">
             <a href="mailto:nathangeorge@yorku.ca">Email</a>
@@ -79,9 +84,7 @@
             <li>✈️ Travelling</li>
         </ul>
 
-        <footer>
-            © 2025 Nathan George — Portfolio Project for ITEC 1010
-        </footer>
+        <footer>© 2025 Nathan George — Portfolio Project for ITEC 1010</footer>
 
     </div>
 
@@ -105,6 +108,19 @@
                 body.classList.remove("dark");
                 localStorage.setItem("theme", "light");
             }
+        });
+    </script>
+
+    <!-- SEARCH SCRIPT -->
+    <script>
+        document.getElementById("searchInput").addEventListener("keyup", function () {
+            let filter = this.value.toLowerCase();
+            let items = document.querySelectorAll(".project-item, ul li");
+
+            items.forEach(item => {
+                let text = item.textContent.toLowerCase();
+                item.style.display = text.includes(filter) ? "" : "none";
+            });
         });
     </script>
 
