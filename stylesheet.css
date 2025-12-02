@@ -6,8 +6,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', Arial, sans-serif;
-    background: url("images/bliss_background.jpg") no-repeat center center fixed;
-    background-size: cover;
+    background: url("images/bliss_background.jpg") no-repeat center top fixed;
+    background-size: cover !important;
+    background-attachment: fixed !important;
     transition: background 0.3s ease, color 0.3s ease;
     animation: fadeIn 0.6s ease-in-out;
 }
@@ -21,21 +22,19 @@ body {
 nav {
     display: flex;
     justify-content: center;
-    gap: 50px;
-    padding: 15px 0;
-    background: rgba(255,255,255,0.45);
-    backdrop-filter: blur(12px);
-    font-size: 20px;
+    gap: 65px;
+    padding: 17px 0;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(18px);
+    font-size: 22px;
     font-weight: 700;
-    position: sticky;
-    top: 0;
-    z-index: 50;
+    width: 100%;
 }
 
 nav a {
     text-decoration: none;
     color: #003366;
-    transition: 0.25s ease;
+    transition: 0.25s;
 }
 
 nav a:hover {
@@ -43,19 +42,19 @@ nav a:hover {
     color: #001a33;
 }
 
-/* MAIN CARD */
+/* Main Container – adjusted to match LOCAL EXACTLY */
 .container {
-    width: 70%;
-    max-width: 900px;
-    margin: 40px auto 120px;
-    background: rgba(255,255,255,0.75);
+    width: 78%;
+    max-width: 1100px;
+    margin: 60px auto 140px;
+    background: rgba(255,255,255,0.78);
     backdrop-filter: blur(18px);
-    padding: 40px;
+    padding: 45px;
     border-radius: 22px;
     box-shadow: 0 8px 40px rgba(0,0,0,0.25);
 }
 
-/* HEADINGS */
+/* Title / Subtitle */
 h1 {
     text-align: center;
     font-size: 40px;
@@ -68,31 +67,25 @@ h1 {
     margin-bottom: 25px;
 }
 
-/* SEARCH BAR */
+/* Search Box */
 .search-box {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     margin-bottom: 25px;
 }
 
 .search-box input {
-    width: 80%;
-    max-width: 350px;
-    padding: 10px 14px;
-    border-radius: 10px;
-    border: 1px solid #aaa;
-    font-size: 16px;
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(8px);
-    transition: 0.2s;
+    width: 90%;
+    max-width: 420px;
+    padding: 12px 16px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: 1px solid #bbb;
+    background: rgba(255,255,255,0.68);
+    backdrop-filter: blur(10px);
 }
 
-.search-box input:focus {
-    outline: none;
-    border: 1px solid #0a4d8c;
-    box-shadow: 0 0 8px rgba(0,0,0,0.2);
-}
-
-/* BUTTONS */
+/* Buttons */
 .nav-links {
     text-align: center;
     margin-bottom: 25px;
@@ -109,18 +102,27 @@ h1 {
     transition: 0.2s;
 }
 
-/* DIVIDER */
+/* Divider */
 hr {
     margin: 25px 0;
     border: none;
     border-top: 1px solid #bbb;
 }
 
-/* ICONS */
-.icon-header { width: 22px; margin-right: 6px; vertical-align: middle; }
-.icon-small  { width: 20px; margin-right: 8px; vertical-align: middle; }
+/* Icons */
+.icon-header { 
+    width: 22px; 
+    margin-right: 6px; 
+    vertical-align: middle; 
+}
 
-/* PROJECTS */
+.icon-small { 
+    width: 20px; 
+    margin-right: 8px; 
+    vertical-align: middle; 
+}
+
+/* Project Items */
 .project-item {
     display: block;
     background: #e8e8e8;
@@ -139,7 +141,7 @@ hr {
     transform: translateX(4px);
 }
 
-/* FOOTER */
+/* Footer */
 footer {
     text-align: center;
     margin-top: 40px;
@@ -147,14 +149,17 @@ footer {
     color: #222;
 }
 
-/* DARK MODE */
+/* ======================
+      DARK MODE
+====================== */
+
 body.dark {
     background: #111 !important;
     color: white !important;
 }
 
 body.dark nav {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.55);
 }
 
 body.dark nav a {
@@ -162,8 +167,7 @@ body.dark nav a {
 }
 
 body.dark .container {
-    background: rgba(25,25,25,0.8);
-    color: white;
+    background: rgba(25,25,25,0.85);
 }
 
 body.dark .project-item {
@@ -171,19 +175,18 @@ body.dark .project-item {
     color: white;
 }
 
-body.dark hr {
-    border-top: 1px solid #555;
-}
-
 body.dark footer {
-    color: #ddd;
+    color: #ccc;
 }
 
-/* TOGGLE SWITCH */
+/* ======================
+    DARK MODE SWITCH
+====================== */
+
 .theme-toggle {
     position: fixed;
     top: 18px;
-    right: 180px; /* PERFECT position */
+    right: 90px; /* moved left just like local */
     z-index: 9999;
 }
 
