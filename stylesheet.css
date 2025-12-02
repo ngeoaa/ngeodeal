@@ -9,12 +9,9 @@ body {
     background: url("images/bliss_background.jpg") no-repeat center center fixed;
     background-size: cover;
     transition: background 0.3s ease, color 0.3s ease;
-}
-
-/* Fade-in */
-body {
     animation: fadeIn 0.6s ease-in-out;
 }
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -30,12 +27,15 @@ nav {
     backdrop-filter: blur(12px);
     font-size: 20px;
     font-weight: 700;
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 nav a {
     text-decoration: none;
     color: #003366;
-    transition: 0.25s;
+    transition: 0.25s ease;
 }
 
 nav a:hover {
@@ -43,7 +43,7 @@ nav a:hover {
     color: #001a33;
 }
 
-/* Main White Card */
+/* CONTAINER */
 .container {
     width: 70%;
     max-width: 900px;
@@ -68,7 +68,7 @@ h1 {
     margin-bottom: 25px;
 }
 
-/* Buttons */
+/* Top buttons */
 .nav-links {
     text-align: center;
     margin-bottom: 25px;
@@ -93,10 +93,19 @@ hr {
 }
 
 /* Icons */
-.icon-header { width: 22px; margin-right: 6px; vertical-align: middle; }
-.icon-small { width: 20px; margin-right: 8px; vertical-align: middle; }
+.icon-header {
+    width: 22px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
 
-/* Project Items */
+.icon-small {
+    width: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* PROJECT BOXES */
 .project-item {
     display: block;
     background: #e8e8e8;
@@ -109,12 +118,13 @@ hr {
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     transition: 0.2s ease;
 }
+
 .project-item:hover {
     background: #dcdcdc;
     transform: translateX(4px);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     text-align: center;
     margin-top: 40px;
@@ -131,7 +141,7 @@ body.dark {
 }
 
 body.dark nav {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.6);
 }
 
 body.dark nav a {
@@ -139,7 +149,7 @@ body.dark nav a {
 }
 
 body.dark .container {
-    background: rgba(20,20,20,0.75);
+    background: rgba(25,25,25,0.8);
     color: white;
 }
 
@@ -148,8 +158,12 @@ body.dark .project-item {
     color: white;
 }
 
+body.dark hr {
+    border-top: 1px solid #555;
+}
+
 body.dark footer {
-    color: #ccc;
+    color: #ddd;
 }
 
 /* ======================
@@ -158,11 +172,13 @@ body.dark footer {
 .theme-toggle {
     position: fixed;
     top: 18px;
-    right: 30px;
+    right: 26px;
     z-index: 9999;
 }
 
-.theme-toggle input { display: none; }
+.theme-toggle input {
+    display: none;
+}
 
 .toggle-label {
     width: 52px;
@@ -186,6 +202,7 @@ body.dark footer {
     transition: 0.3s ease;
 }
 
+/* DARK MODE ACTIVE */
 #darkToggle:checked + .toggle-label {
     background: #2e3b55;
 }
