@@ -6,110 +6,79 @@
     <title>Nathan George — Portfolio</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 
-<body>
+<body id="top">
 
-<!-- DARK MODE TOGGLE -->
-<img id="theme-toggle" src="images/moon.png" alt="toggle theme">
-
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="nav-content">
-        <a href="#home">Home</a>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="#top">Home</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#interests">Interests</a>
+    </nav>
+
+    <!-- MAIN CARD -->
+    <div class="container">
+        <h1>Nathan George</h1>
+
+        <p class="subtitle">
+            I am a Financial & Business Economics student at York University. 
+            This website showcases my academic work, skills, and interests.
+        </p>
+
+        <div class="nav-links">
+            <a href="mailto:ng@example.com" class="button">Email</a>
+            <a href="resume.pdf" target="_blank" class="button">Resume</a>
+            <a href="https://www.linkedin.com" target="_blank" class="button">LinkedIn</a>
+        </div>
+
+        <hr>
+
+        <!-- PROJECTS -->
+        <h2 id="projects"><img src="images/icon3.png" class="icon-header"> Projects</h2>
+
+        <a class="project-item" href="econ3210.pdf" target="_blank">
+            <img src="images/icon4.png" class="icon"> 
+            ECON 3210 — Regression Analysis (R Assignment)
+        </a>
+
+        <a class="project-item" href="fxtrading.pdf" target="_blank">
+            <img src="images/icon4.png" class="icon"> 
+            International Financial Analysis — Coursework Project
+        </a>
+
+        <hr>
+
+        <!-- SKILLS -->
+        <h2 id="skills"><img src="images/icon3.png" class="icon-header"> Skills</h2>
+
+        <ul>
+            <li>Data Analysis (Excel, R)</li>
+            <li>Financial Modeling</li>
+            <li>Regression Interpretation</li>
+            <li>Problem-Solving & Critical Thinking</li>
+        </ul>
+
+        <hr>
+
+        <!-- INTERESTS -->
+        <h2 id="interests"><img src="images/icon5.png" class="icon-header"> Interests</h2>
+
+        <ul>
+            <li>⚽ Football</li>
+            <li>🎵 Listening to Music</li>
+            <li>🏃‍♂️ 5K Runs</li>
+            <li>✈️ Travelling</li>
+        </ul>
+
     </div>
-</nav>
 
-<!-- MAIN CONTAINER -->
-<div class="container" id="home">
-
-    <h1>Nathan George</h1>
-    <p class="subtitle">
-        I am a Financial & Business Economics student at York University.
-        This website showcases my academic work, skills, and interests.
-    </p>
-
-    <!-- Buttons -->
-    <div class="nav-links">
-        <a href="mailto:ng@example.com">Email</a>
-        <a href="resume.pdf" target="_blank">Resume</a>
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-    </div>
-
-    <hr>
-
-    <!-- Projects -->
-    <h2 id="projects">
-        <img src="images/icon3.png" class="icon-header"> Projects
-    </h2>
-
-    <a class="project-item" href="econ3210.pdf" target="_blank">
-        <img src="images/icon4.png" class="icon"> ECON 3210 — Regression Analysis (R Assignment)
-    </a>
-
-    <a class="project-item" href="fxtrading.pdf" target="_blank">
-        <img src="images/icon4.png" class="icon"> International Financial Analysis — Coursework Project
-    </a>
-
-    <hr>
-
-    <!-- Skills -->
-    <h2 id="skills">
-        <img src="images/icon3.png" class="icon-header"> Skills
-    </h2>
-
-    <ul>
-        <li>Data Analysis (Excel, R)</li>
-        <li>Financial Modeling</li>
-        <li>Regression Interpretation</li>
-        <li>Problem-Solving & Critical Thinking</li>
-    </ul>
-
-    <hr>
-
-    <!-- Interests -->
-    <h2 id="interests">
-        <img src="images/icon5.png" class="icon-header"> Interests
-    </h2>
-
-    <ul>
-        <li>⚽ Football</li>
-        <li>🎵 Listening to Music</li>
-        <li>🏃‍♂️ 5K Runs</li>
-        <li>✈️ Travelling</li>
-    </ul>
-
-</div>
-
-<footer>
-    © 2025 Nathan George — Portfolio Project for ITEC 1010
-</footer>
-
-<!-- DARK MODE SCRIPT -->
-<script>
-const toggle = document.getElementById("theme-toggle");
-
-if (localStorage.getItem("theme") === "dark") {
-    document.documentElement.classList.add("dark-mode");
-    toggle.src = "images/sun.png";
-}
-
-toggle.addEventListener("click", () => {
-    document.documentElement.classList.toggle("dark-mode");
-
-    if (document.documentElement.classList.contains("dark-mode")) {
-        toggle.src = "images/sun.png";
-        localStorage.setItem("theme", "dark");
-    } else {
-        toggle.src = "images/moon.png";
-        localStorage.setItem("theme", "light");
-    }
-});
-</script>
+    <footer>
+        © 2025 Nathan George — Portfolio Project for ITEC 1010
+    </footer>
 
 </body>
 </html>
