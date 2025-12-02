@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nathan George — Portfolio</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
+
+<!-- DARK MODE TOGGLE -->
+<img id="theme-toggle" src="images/moon.png" alt="toggle theme">
 
 <!-- NAVBAR -->
 <nav class="navbar">
@@ -20,46 +24,42 @@
     </div>
 </nav>
 
-<!-- MAIN CARD -->
+<!-- MAIN CONTAINER -->
 <div class="container" id="home">
 
     <h1>Nathan George</h1>
     <p class="subtitle">
-        I am a Financial & Business Economics student at York University.  
+        I am a Financial & Business Economics student at York University.
         This website showcases my academic work, skills, and interests.
     </p>
 
-    <!-- CONTACT BUTTONS -->
+    <!-- Buttons -->
     <div class="nav-links">
-        <a href="mailto:nathangeorge1227@gmail.com">Email</a>
+        <a href="mailto:ng@example.com">Email</a>
         <a href="resume.pdf" target="_blank">Resume</a>
         <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
     </div>
 
     <hr>
 
-    <!-- PROJECTS -->
+    <!-- Projects -->
     <h2 id="projects">
-        <img src="images/icon3.png" class="icon-header">
-        Projects
+        <img src="images/icon3.png" class="icon-header"> Projects
     </h2>
 
     <a class="project-item" href="econ3210.pdf" target="_blank">
-        <img src="images/icon4.png" class="icon">
-        ECON 3210 — Regression Analysis (R Assignment)
+        <img src="images/icon4.png" class="icon"> ECON 3210 — Regression Analysis (R Assignment)
     </a>
 
     <a class="project-item" href="fxtrading.pdf" target="_blank">
-        <img src="images/icon4.png" class="icon">
-        International Financial Analysis — Coursework Project
+        <img src="images/icon4.png" class="icon"> International Financial Analysis — Coursework Project
     </a>
 
     <hr>
 
-    <!-- SKILLS -->
+    <!-- Skills -->
     <h2 id="skills">
-        <img src="images/icon3.png" class="icon-header">
-        Skills
+        <img src="images/icon3.png" class="icon-header"> Skills
     </h2>
 
     <ul>
@@ -71,10 +71,9 @@
 
     <hr>
 
-    <!-- INTERESTS -->
+    <!-- Interests -->
     <h2 id="interests">
-        <img src="images/icon5.png" class="icon-header">
-        Interests
+        <img src="images/icon5.png" class="icon-header"> Interests
     </h2>
 
     <ul>
@@ -89,6 +88,28 @@
 <footer>
     © 2025 Nathan George — Portfolio Project for ITEC 1010
 </footer>
+
+<!-- DARK MODE SCRIPT -->
+<script>
+const toggle = document.getElementById("theme-toggle");
+
+if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.classList.add("dark-mode");
+    toggle.src = "images/sun.png";
+}
+
+toggle.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark-mode");
+
+    if (document.documentElement.classList.contains("dark-mode")) {
+        toggle.src = "images/sun.png";
+        localStorage.setItem("theme", "dark");
+    } else {
+        toggle.src = "images/moon.png";
+        localStorage.setItem("theme", "light");
+    }
+});
+</script>
 
 </body>
 </html>
