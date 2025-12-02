@@ -5,66 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nathan George — Portfolio</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
 
-<!-- Parallax Card Motion Script -->
-<script>
-document.addEventListener("mousemove", e => {
-    const card = document.querySelector('.container');
-    const x = (window.innerWidth / 2 - e.clientX) / 60;
-    const y = (window.innerHeight / 2 - e.clientY) / 60;
-    card.style.transform = `translate(${x}px, ${y}px) scale(1.01)`;
-});
-</script>
+<!-- 🌙 Dark Mode Toggle -->
+<div class="theme-toggle">
+    <span>☀️</span>
+    <label class="switch">
+        <input type="checkbox" id="modeToggle">
+        <span class="slider round"></span>
+    </label>
+    <span>🌙</span>
+</div>
 
-<div class="container">
+<!-- Sticky Navbar -->
+<div class="navbar">
+    <a href="#top">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#interests">Interests</a>
+</div>
+
+<div class="container fade-section" id="top">
 
     <h1>Nathan George</h1>
     <p class="subtitle">
         I am a Financial & Business Economics student at York University.
-        This website was created for my Web Development assignment and showcases my academic work, skills, and interests.
+        This website showcases my academic work, skills, and interests.
     </p>
 
-    <!-- Nav Links -->
     <div class="nav-links">
-        <a href="mailto:ng@example.com">
-            <img src="images/icon0.png" class="icon-small"> Email
-        </a>
-
-        <a href="resume.pdf" target="_blank">
-            <img src="images/icon2.png" class="icon-small"> Resume
-        </a>
-
-        <a href="https://www.linkedin.com" target="_blank">
-            <img src="images/icon5.png" class="icon-small"> LinkedIn
-        </a>
+        <a class="btn" href="mailto:ng@example.com">Email</a>
+        <a class="btn glow" href="resume.pdf" target="_blank">Resume</a>
+        <a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
     </div>
 
     <hr>
 
     <!-- Projects -->
-    <h2><img src="images/icon3.png" class="icon-header"> Projects</h2>
+    <h2 id="projects"><img src="images/icon3.png" class="icon-header"> Projects</h2>
 
-    <a class="project-item" href="econ3210.pdf" target="_blank">
+    <a class="project-item fade-section" href="econ3210.pdf" target="_blank">
         <img src="images/icon4.png" class="icon"> ECON 3210 — Regression Analysis (R Assignment)
     </a>
 
-    <a class="project-item" href="fxtrading.pdf" target="_blank">
+    <a class="project-item fade-section" href="fxtrading.pdf" target="_blank">
         <img src="images/icon4.png" class="icon"> International Financial Analysis — Coursework Project
     </a>
 
     <hr>
 
     <!-- Skills -->
-    <h2><img src="images/icon3.png" class="icon-header"> Skills</h2>
+    <h2 id="skills"><img src="images/icon3.png" class="icon-header"> Skills</h2>
 
-    <ul>
+    <ul class="fade-section">
         <li>Data Analysis (Excel, R)</li>
         <li>Financial Modeling</li>
         <li>Regression Interpretation</li>
@@ -74,9 +71,9 @@ document.addEventListener("mousemove", e => {
     <hr>
 
     <!-- Interests -->
-    <h2><img src="images/icon5.png" class="icon-header"> Interests</h2>
+    <h2 id="interests"><img src="images/icon5.png" class="icon-header"> Interests</h2>
 
-    <ul>
+    <ul class="fade-section">
         <li>⚽ Football</li>
         <li>🎵 Listening to Music</li>
         <li>🏃‍♂️ 5K Runs</li>
@@ -86,8 +83,31 @@ document.addEventListener("mousemove", e => {
 </div>
 
 <footer>
-    <p>© 2025 Nathan George — Portfolio Project for ITEC 1010</p>
+    <p>© 2025 Nathan George • Portfolio Project for ITEC 1010</p>
+
+    <div class="footer-icons">
+        <a href="mailto:ng@example.com">📧</a>
+        <a href="https://www.linkedin.com" target="_blank">🔗</a>
+        <a href="#top">⬆️</a>
+    </div>
 </footer>
+
+<script>
+/* 🌙 Dark Mode Toggle */
+document.getElementById("modeToggle").addEventListener("change", function() {
+    document.body.classList.toggle("dark");
+});
+
+/* Fade-in on scroll */
+const sections = document.querySelectorAll('.fade-section');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+});
+
+sections.forEach(section => observer.observe(section));
+</script>
 
 </body>
 </html>
