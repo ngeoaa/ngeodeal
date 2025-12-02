@@ -17,7 +17,7 @@
         </label>
     </div>
 
-    <!-- NAVBAR -->
+    <!-- NAVIGATION BAR -->
     <nav>
         <a href="#top">Home</a>
         <a href="#projects">Projects</a>
@@ -30,7 +30,8 @@
 
         <h1>Nathan George</h1>
         <p class="subtitle">
-            I am a Financial & Business Economics student at York University. This website showcases my academic work, skills, and interests.
+            I am a Financial & Business Economics student at York University. 
+            This website showcases my academic work, skills, and interests.
         </p>
 
         <div class="nav-links">
@@ -42,7 +43,7 @@
         <hr>
 
         <!-- PROJECTS -->
-        <h2 id="projects"><img src="images/icon3.png" class="icon-header">Projects</h2>
+        <h2 id="projects"><img src="images/icon3.png" class="icon-header"> Projects</h2>
 
         <a class="project-item" href="econ3210.pdf" target="_blank">
             <img src="images/icon4.png" class="icon-small">
@@ -57,7 +58,7 @@
         <hr>
 
         <!-- SKILLS -->
-        <h2 id="skills"><img src="images/icon3.png" class="icon-header">Skills</h2>
+        <h2 id="skills"><img src="images/icon3.png" class="icon-header"> Skills</h2>
         <ul>
             <li>Data Analysis (Excel, R)</li>
             <li>Financial Modeling</li>
@@ -68,7 +69,7 @@
         <hr>
 
         <!-- INTERESTS -->
-        <h2 id="interests"><img src="images/icon5.png" class="icon-header">Interests</h2>
+        <h2 id="interests"><img src="images/icon5.png" class="icon-header"> Interests</h2>
         <ul>
             <li>⚽ Football</li>
             <li>🎵 Listening to Music</li>
@@ -87,11 +88,13 @@
         const toggle = document.getElementById("darkToggle");
         const body = document.body;
 
+        // Load saved theme
         if (localStorage.getItem("theme") === "dark") {
             body.classList.add("dark");
             toggle.checked = true;
         }
 
+        // Toggle theme
         toggle.addEventListener("change", () => {
             if (toggle.checked) {
                 body.classList.add("dark");
